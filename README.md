@@ -7,5 +7,5 @@
 3. Create an EC2 on the public subnet of your VPC
 4. Configure the Jenkins agent on the VPC
 5. Create a pipeline build on Jenkins
-6.Additions
-7.Diagram
+6. Additions
+7. Diagram
