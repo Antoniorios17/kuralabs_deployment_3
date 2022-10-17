@@ -23,9 +23,102 @@
 The EC2 doesn't need to be part of the vpc, we are trying to connect the jenkins server from outside the VPC with an agent
 * Create an EC2 on AWS and use an Ubuntu image.
 * Configure RSA authentication for ssh remote access
-* Configure the proper security groups for jenkins to fucntion properly (22, 80, 8080).
+* Configure the proper security groups for jenkins to function properly (22, 80, 8080).
+* Install jenkins on the EC2 with all dependencies
 * Create a multiplebranch pipeline
 * Connect to the repository on github using personal token
-* Test to verify authentication is successful 
+* Test to verify authentication is successful
+
+## Create an EC2 in your public subnet of your VPC
+* Select an ubuntu image and most default settings
+* Open ports are 22 and 5000
+* Once ubuntu is set up and updated
+* Install the following libraries:
+  * default-jre
+  * python3-pip
+  * python3.10-venv
+  * nginx
+
+This is the preparation of the EC2 to work with the Jenkins agent coming from the main server.
+
+## Configure the Jenkins agent on the VPC
+Keep in mind that you are working on these steps on the main server outside the VPC.
+
+* From the jenkins dashboard select the option for "Build Executor Status"
+* To create a new agent "New Node" and permanent agent
+* Configure the name and description as necessary
+* To connect to the EC2 inside the VPC launch the agent via SSH:
+  * Add the public IP of the EC2
+  * Add the RSA key and user to access the computer using SSH.
+* Keep the availability of the agent at all times.
+* Save all the configurations
+
+In the case of the agent disconnecting or if you happen to change the IP address follow the troubleshooting instructions
+
+![offline](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/agent_offline.PNG)
+![offline](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/agent_not_connected.PNG)
+``` diff
+-Troubleshooting: When working with the agent and free EC2s, it is expected that the public IP will change once the computer is turned off.
+-You will need to update the public IP and set up the access for ssh to continue to work normally.
+```
+Once the problems are resolved you can relaunch the agent with the updated IP.
+
+## Create a pipeline build on Jenkins
+* Steps to take before startint the build
+  * Access the EC2 inside the VPC using ssh or connect through aws console.
+  * Modify the default file in nginx
+  ```
+  /etc/nginx/sites-enabled/default
+  ```
+  * Update the listening ports:
+  ```
+  server {
+           listen 5000 default_server;
+           listen [::]:5000 default_server;
+  ```
+  * Update the location settings:
+    ```
+    location / {
+             proxy_pass http://127.0.0.1:8000;
+             proxy_set_header Host $host;
+             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    ```
+``` diff
+-Troubleshooting
+-I initially encounter errors with working with the documentations and I was not able to run the application successfully and I had an error in the Jenkinsfile
+-The documentation was updated for the jenkinsfile and the working and updated file is in the repository
+```
+
+## Additions
+
+* To make the current configuration more automated you can connect jenkins to the github repository:
+  * Log in to github and access the repository online
+  * "Settings" of the repository
+  * Select "Webhoooks"
+  * Add Webhook
+  * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
