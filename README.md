@@ -118,6 +118,10 @@ If everything is successfull you will see all stages of the build on color green
 ![UI-after](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/UI-after.PNG)
 
 
+# Diagram
+
+![diagram](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/diagram.PNG)
+
 
 
 
