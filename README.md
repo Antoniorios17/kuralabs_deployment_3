@@ -13,9 +13,10 @@
 
 ## Set up and configure VPC
 * Create a VPC on AWS
-* Create 2 subnets a private and a public subnet
+* Create 2 subnets a private and a public subnet 
 * Configure the internet gateway
 * Configure the routing tables
+![tables](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/routing%20tables.PNG)
 
 ## Install Jenkins on an EC2
 The EC2 doesn't need to be part of the vpc, we are trying to connect the jenkins server from outside the VPC with an agent
@@ -25,5 +26,5 @@ The EC2 doesn't need to be part of the vpc, we are trying to connect the jenkins
 * Create a multiplebranch pipeline
 * Connect to the repository on github using personal token
 * Test to verify authentication is successful 
-* 
+
 
