@@ -89,15 +89,35 @@ Once the problems are resolved you can relaunch the agent with the updated IP.
 -I initially encounter errors with working with the documentations and I was not able to run the application successfully and I had an error in the Jenkinsfile
 -The documentation was updated for the jenkinsfile and the working and updated file is in the repository
 ```
+* After all the configurations are correct you can create a new build
 
-## Additions
+![deploy](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/deploy.PNG)
 
+If everything is successfull you will see all stages of the build on color green.
+
+# Additions
+## Webhook
 * To make the current configuration more automated you can connect jenkins to the github repository:
   * Log in to github and access the repository online
   * "Settings" of the repository
   * Select "Webhoooks"
   * Add Webhook
-  * 
+  * ```
+    http://{Ip-address}:8080/github-webhook/
+    ```
+## Update the front end
+* this is a very simple change to the UI
+* I added my name as part of the website page
+* Updated the color of the front page
+* This is the original page:
+
+![UI-before](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/UI-before.PNG)
+
+* This is the website after the changes:
+
+![UI-after](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/UI-after.PNG)
+
+
 
 
 
