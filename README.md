@@ -16,6 +16,7 @@
 * Create 2 subnets a private and a public subnet 
 * Configure the internet gateway
 * Configure the routing tables
+* 
 ![tables](https://github.com/Antoniorios17/kuralabs_deployment_3/blob/main/images/routing%20tables.PNG)
 
 ## Install Jenkins on an EC2
