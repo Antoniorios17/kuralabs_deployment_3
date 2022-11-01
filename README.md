@@ -93,22 +93,6 @@ If everything is successfull you will see all stages of the build on color green
 # Additions
 ## Webhook
 * To make the current configuration more automated you can connect jenkins to the github repository:
-If everything is successfull you will see all stages of the build on color green
-
-1. Install Jenkins on an EC2
-2. Install terraform on the EC2
-3. Configure credentials on Jenkins
-4. Create a pipeline build on Jenkins
-5. Create a VPC with terraform and deploy the application
-6. Additions
-7. Diagram
- 
-![tables](<link>)
-
-
-# Additions
-## Webhook
-* To make the current configuration more automated you can connect jenkins to the github repository:
   * Log in to github and access the repository online
   * "Settings" of the repository
   * Select "Webhoooks"
