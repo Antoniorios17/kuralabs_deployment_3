@@ -8,12 +8,6 @@
 3. Create an EC2 on the public subnet of your VPC
 4. Configure the Jenkins agent on the VPC
 5. Create a pipeline build on Jenkins
-
-1. Install Jenkins on an EC2
-2. Install terraform on the EC2
-3. Configure credentials on Jenkins
-4. Create a pipeline build on Jenkins
-5. Create a VPC with terraform and deploy the application
 6. Additions
 7. Diagram
 
