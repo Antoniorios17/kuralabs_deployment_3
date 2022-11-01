@@ -112,15 +112,6 @@ If everything is successfull you will see all stages of the build on color green
  
 ![tables](<link>)
 
-## Install Jenkins on an EC2
-The EC2 doesn't need to be part of the vpc, we are trying to connect the jenkins server from outside the VPC with an agent
-* Create an EC2 on AWS and use an Ubuntu image.
-* Configure RSA authentication for ssh remote access
-* Configure the proper security groups for jenkins to function properly (22, 80, 8080).
-* Install jenkins on the EC2 with all dependencies
-* Create a multiplebranch pipeline
-* Connect to the repository on github using personal token
-* Test to verify authentication is successful
 
 # Additions
 ## Webhook
